@@ -1,4 +1,4 @@
-{% set version = "0.4.3" %}
+{% set version = "0.5.0" %}
 
 package:
   name: mkl_umath
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/IntelPython/mkl_umath/archive/{{ version }}.tar.gz
-  sha256: 84bd0a3167d0f6c903103277922bd4ac33b535239767540d9a82b16e1977f215
+  sha256: 77b52b44fd634c545c416ec394cf3c88d0aca3965fde1a759e6d87620fdd0289
 
 build:
   number: 0
@@ -27,11 +27,10 @@ requirements:
   host:
     - python
     - pip
-    - setuptools >=77
+    - meson-python >=0.16.0
     - cmake
     - ninja
     - cython
-    - scikit-build
     - mkl-devel
     - intel-cmplr-lib-rt  # [not osx]
     - numpy  # [not win]
