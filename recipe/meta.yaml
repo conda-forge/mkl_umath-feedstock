@@ -9,7 +9,7 @@ source:
   sha256: 77b52b44fd634c545c416ec394cf3c88d0aca3965fde1a759e6d87620fdd0289
 
 build:
-  number: 1
+  number: 2
   skip: true  # [osx]
   ignore_run_exports_from:
     - {{ compiler('dpcpp') }}  # [linux]
@@ -40,6 +40,7 @@ requirements:
   run:
     - python
     - python-gil  # [py>=314]
+    - libpython  # [win and py>=314]
 
 test:
   requires:
