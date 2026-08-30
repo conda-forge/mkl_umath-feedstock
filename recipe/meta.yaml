@@ -27,11 +27,10 @@ requirements:
   host:
     - python
     - pip
-    - setuptools >=77
+    - meson-python >=0.16.0
     - cmake
     - ninja
     - cython
-    - scikit-build
     - mkl-devel
     - intel-cmplr-lib-rt  # [not osx]
     - numpy  # [not win]
