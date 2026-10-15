@@ -1,4 +1,4 @@
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: mkl_umath
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/IntelPython/mkl_umath/archive/{{ version }}.tar.gz
-  sha256: 77b52b44fd634c545c416ec394cf3c88d0aca3965fde1a759e6d87620fdd0289
+  sha256: ca0292bf97ef26a85bea6b638c40d85056321b8f2d3e9e19217cacc6c9912689
 
 build:
-  number: 1
+  number: 0
   skip: true  # [osx]
   ignore_run_exports_from:
     - {{ compiler('dpcpp') }}  # [linux]
@@ -30,16 +30,13 @@ requirements:
     - meson-python >=0.16.0
     - cmake
     - ninja
-    - cython
+    - cython >=3.1.0
     - mkl-devel
     - intel-cmplr-lib-rt  # [not osx]
-    - numpy  # [not win]
-    - numpy <2.4  # [win]
+    - numpy
     - llvm-openmp
-    # TODO: remove win numpy pin when numpy 2.5 is released, see https://github.com/numpy/numpy/issues/31337
   run:
     - python
-    - python-gil  # [py>=314]
 
 test:
   requires:
