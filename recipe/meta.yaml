@@ -30,16 +30,13 @@ requirements:
     - meson-python >=0.16.0
     - cmake
     - ninja
-    - cython
+    - cython >=3.1.0
     - mkl-devel
     - intel-cmplr-lib-rt  # [not osx]
-    - numpy  # [not win]
-    - numpy <2.4  # [win]
+    - numpy
     - llvm-openmp
-    # TODO: remove win numpy pin when numpy 2.5 is released, see https://github.com/numpy/numpy/issues/31337
   run:
     - python
-    - python-gil  # [py>=314]
 
 test:
   requires:
