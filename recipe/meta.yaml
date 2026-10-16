@@ -9,7 +9,7 @@ source:
   sha256: ca0292bf97ef26a85bea6b638c40d85056321b8f2d3e9e19217cacc6c9912689
 
 build:
-  number: 1
+  number: 2
   skip: true  # [osx]
   ignore_run_exports_from:
     - {{ compiler('dpcpp') }}  # [linux]
@@ -37,6 +37,9 @@ requirements:
     - llvm-openmp
   run:
     - python
+    # NumPy 1 vs 2 loops are chosen at compile time (USE_NUMPY_2), so a build
+    # against NumPy 2 must not run on NumPy 1.x; run_exports add the upper bound
+    - numpy >=2
 
 test:
   requires:
