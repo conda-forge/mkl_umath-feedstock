@@ -9,7 +9,7 @@ source:
   sha256: ca0292bf97ef26a85bea6b638c40d85056321b8f2d3e9e19217cacc6c9912689
 
 build:
-  number: 2
+  number: 3
   skip: true  # [osx]
   ignore_run_exports_from:
     - {{ compiler('dpcpp') }}  # [linux]
